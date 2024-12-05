@@ -1,24 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author HP
+ */
 public class Main {
     public static void main(String[] args) {
-        // Create the student model
-        Student student = new Student("Muhammad Bilal", 101, "A");
+        // Create the model, view, and controller
+        Model model = new Model();
+        View view = new View();
+        Controller controller = new Controller(model, view);
 
-        // Create the view
-        StudentView view = new StudentView();
-
-        // Create the controller
-        StudentController controller = new StudentController(student, view);
-
-        // Display initial student details
-        controller.updateView();
-
-        // Update student details
-        System.out.println("\nUpdating student details...");
-        controller.setStudentName("Hussain Mustafa");
-        controller.setStudentRollNumber(102);
-        controller.setStudentGrade("B");
-
-        // Display updated student details
+        // Set the data and update the view
+        controller.setData("Hello, MVC!");
         controller.updateView();
     }
 }
